@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<img src="{% static 'images/glass.png' %}" alt="glass" class="glass">
+
+<h1 style="font-weight: 300;"><em>안녕하세요. . .</em></h1>
+<div class="main">
+    <h1 class="meong">멍...</h1>
+    <img src="{% static 'images/main.jpg' %}" style="display: block; margin: 0 auto;" alt="main" width="400"
+        height="200">
+
+</div>
+<h1 class="impani">
+    저는 <span class="highlight">파니예요</span></h1>
+
+<br>
+<div class="navbar-container" style="background-color:rgb(174, 239, 255)">파니 갤러리</div>
+<br>
+
+
+<div class="main-container">
+    <div class="image-row">
+        <img src="{% static 'images/milk.jpg' %}" alt="milk">
+        <img src="{% static 'images/sleep.jpg' %}" alt="sleep">
+    </div>
+
+    <div class="ui-section">
+        <div class="buttons">
+            <button onclick="showBox('a')">스테이터스 보기</button>
+            <button onclick="showBox('b')">파니에게 간식 주기</button>
+        </div>
+
+            <div id="box-a" class="box">
+                이름: 코파니 <br>
+                견종: 코카스파니엘 <br>
+                나이: 16세 <br>
+                성별: ♀ <br>
+                개인기: 앉아, 엎드려(두개 구분 확률 30%)
+            </div>
+
+            <div id="box-b" class="box">
+                <em><u><span style="font-size:12px">
+                    토스뱅크 1000-6959-0402 <br>
+                    김연비</span></em></u> <br><br>
+                    많은 후원 부탁드립니다.
+                    기부된 금액은 파니의 간식을
+                구매하는데 사용됩니다.</div>
+            </div>
+    </div>
+</div>
+
+<script>
+    function showBox(target) {
+        document.getElementById("box-a").style.display = (target === 'a') ? 'block' : 'none';
+        document.getElementById("box-b").style.display = (target === 'b') ? 'block' : 'none';
+    }
+</script>
+
+<audio src="{% static 'audio/209.mp3' %}" autoplay>
+    브금 재생이 안됨
+</audio>
+
+
+{% endblock %}
